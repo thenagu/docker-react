@@ -3,5 +3,6 @@ WORKDIR /app
 COPY package.json .
 RUN npm install
 # Not required as we are going volume mount
-# COPY . .
+# Uncommented COPY . . as we are not using volumes when built using Travis CI, or some other.
+COPY . .
 CMD ["npm", "run", "start"]
