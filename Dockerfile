@@ -8,6 +8,7 @@ RUN npm run build
 
 # the from keyward starts the new phase.
 FROM nginx
+EXPOSE 80
 # to path (/usr/share/nginx/html) is from the documentation at https://hub.docker.com/_/nginx
 COPY --from=builder /app/build /usr/share/nginx/html
 # Starting nginx is the default command to nginx container, so no need to mention it here.
